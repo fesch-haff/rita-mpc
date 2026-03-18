@@ -1,5 +1,5 @@
-from src.mpc.runners.experimental_runners.experimental_runner import ExpRunner
-
+from .experimental_runners import ExpRunner
+from .greenhouse_runner import GreenhouseRunner
 
 def create_runner(args):
     """
@@ -12,6 +12,7 @@ def create_runner(args):
     """
     runner_map = {
         "ExperimentalRunners": ExpRunner,
+        "GreenhouseRunner": GreenhouseRunner,
     }
 
     runner_type = args.runner_type
