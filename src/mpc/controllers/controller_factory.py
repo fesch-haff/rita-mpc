@@ -1,4 +1,4 @@
-from .derivative_free_controllers import CEM, MPPI, MPPIWilliams, RandomShooting
+from .derivative_free_controllers import CEM, MPPI, MPPIWilliams, RandomShooting, BruteForce
 from .gradient_based_controllers import DDP, iLQR, NMPC, NMPCCGMRES
 from .optimization_based_controllers import LinearMPC
 
@@ -22,6 +22,7 @@ def create_controller(args, config, model):
         "DDP": DDP,
         "NMPC": NMPC,
         "NMPCCGMRES": NMPCCGMRES,
+        "BruteForce": BruteForce,
     }
 
     controller_type = args.controller_type
