@@ -1,4 +1,5 @@
 from .experimental_models import CartPoleModel, TwoWheeledModel, NonlinearSampleSystemModel, FirstOrderLagModel
+from .composite_models import GreenhouseCompositeModel
 
 
 def create_model(args, config):
@@ -16,6 +17,7 @@ def create_model(args, config):
         "TwoWheeledTrack": TwoWheeledModel,
         "CartPole": CartPoleModel,
         "NonlinearSample": NonlinearSampleSystemModel,
+        "Greenhouse": GreenhouseCompositeModel,
     }
 
     model_type = args.env
