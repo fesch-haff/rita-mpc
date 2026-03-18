@@ -1,0 +1,25 @@
+{
+    "target": "sensor.awair_element_82522_temperature",
+    "features": [
+        "sensor.awair_element_82522_temperature",
+        "sensor.outdoor_temperature",
+        "sensor.outdoor_brightness_lux",
+
+        "cover.rita_window_e_e_window",
+        "cover.rita_window_w_w_window",
+        "switch.rita_relay_08"
+    ],
+
+    "training": {
+        "steps_ahead": 5,
+        "validation_fraction": 0.2,
+        "dropout_prob": 0.05,
+        "random_state": 42
+    },
+
+    "hyperparameters": {
+        "n_estimators": 300,
+        "max_depth": 5,
+        "learning_rate": 0.05
+    }
+}
