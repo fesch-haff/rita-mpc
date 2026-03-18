@@ -1,6 +1,7 @@
 from .experimental_configurations import CartPoleConfigModule, TwoWheeledConfigModule, NonlinearSampleSystemConfigModule, FirstOrderLagConfigModule, NonlinearSampleSystemExtendConfigModule
+from .greenhouse_configuration import build_control_config
 
-def create_configuration(args):
+def create_configuration(args, data):
     """
     Mapping string names to Class objects
     REFERENCES:
@@ -14,7 +15,8 @@ def create_configuration(args):
         "TwoWheeledConfigModule": TwoWheeledConfigModule,
         "NonlinearSampleSystemConfigModule": NonlinearSampleSystemConfigModule,
         "FirstOrderLagConfigModule": FirstOrderLagConfigModule,
-        "NonlinearSampleSystemExtendConfigModule": NonlinearSampleSystemExtendConfigModule
+        "NonlinearSampleSystemExtendConfigModule": NonlinearSampleSystemExtendConfigModule,
+        'GreenhouseConfiguration': build_control_config
     }
 
     configuration_type = args.configuration_type
@@ -24,4 +26,4 @@ def create_configuration(args):
         raise ValueError(f"No configuration found for type: {configuration_type}")
 
     # Initialize and return the specific configuration
-    return configuration_class()
+    return configuration_class(data)
