@@ -1,6 +1,10 @@
-from PythonLinearNonlinearControl.configs.cartpole \
-    import CartPoleConfigModule  # NOQA
-from PythonLinearNonlinearControl.configs.first_order_lag \
-    import FirstOrderLagConfigModule  # NOQA
-from PythonLinearNonlinearControl.configs.two_wheeled \
-    import TwoWheeledConfigModule  # NOQA
+# Import the subpackages as namespaces
+from . import experimental_configurations
+
+# Import helper / factory functions
+from configuration_factory import create_configuration
+
+__all__ = [
+    "experimental_configurations",
+    "create_configuration",
+]

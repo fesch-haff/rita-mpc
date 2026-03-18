@@ -1,4 +1,10 @@
-from PythonLinearNonlinearControl.planners.const_planner \
-    import ConstantPlanner  # NOQA
-from PythonLinearNonlinearControl.planners.closest_point_planner \
-    import ClosestPointPlanner  # NOQA
+# Import the subpackages as namespaces
+from . import experimental_planners
+
+# Import helper / factory functions
+from .planners_factory import create_planner
+
+__all__ = [
+    'experimental_planners',
+    'create_planner'
+]

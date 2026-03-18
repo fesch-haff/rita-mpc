@@ -1,6 +1,10 @@
-from PythonLinearNonlinearControl.models.cartpole \
-    import CartPoleModel  # NOQA
-from PythonLinearNonlinearControl.models.first_order_lag \
-    import FirstOrderLagModel  # NOQA
-from PythonLinearNonlinearControl.models.two_wheeled \
-    import TwoWheeledModel  # NOQA
+# Import the subpackages as namespaces
+from . import experimental_models
+
+# Import helper / factory functions
+from model_factory import create_model
+
+__all__ = [
+    'experimental_models',
+    'create_model'
+]
